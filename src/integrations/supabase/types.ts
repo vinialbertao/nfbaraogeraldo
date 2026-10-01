@@ -14,7 +14,188 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      enderecos: {
+        Row: {
+          apelido: string
+          bairro: string
+          cep: string
+          cidade: string
+          complemento: string | null
+          criado_em: string
+          estado: string
+          id: string
+          numero: string
+          principal: boolean
+          rua: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          apelido: string
+          bairro: string
+          cep: string
+          cidade: string
+          complemento?: string | null
+          criado_em?: string
+          estado: string
+          id?: string
+          numero: string
+          principal?: boolean
+          rua: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          apelido?: string
+          bairro?: string
+          cep?: string
+          cidade?: string
+          complemento?: string | null
+          criado_em?: string
+          estado?: string
+          id?: string
+          numero?: string
+          principal?: boolean
+          rua?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "enderecos_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      favoritos: {
+        Row: {
+          criado_em: string
+          produto_id: number
+          user_id: string
+        }
+        Insert: {
+          criado_em?: string
+          produto_id: number
+          user_id: string
+        }
+        Update: {
+          criado_em?: string
+          produto_id?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "favoritos_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      pedido_itens: {
+        Row: {
+          id: string
+          nome: string
+          pedido_id: string
+          preco_unitario: number
+          produto_id: number
+          quantidade: number
+        }
+        Insert: {
+          id?: string
+          nome: string
+          pedido_id: string
+          preco_unitario: number
+          produto_id: number
+          quantidade: number
+        }
+        Update: {
+          id?: string
+          nome?: string
+          pedido_id?: string
+          preco_unitario?: number
+          produto_id?: number
+          quantidade?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "pedido_itens_pedido_id_fkey"
+            columns: ["pedido_id"]
+            isOneToOne: false
+            referencedRelation: "pedidos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      pedidos: {
+        Row: {
+          criado_em: string
+          endereco_texto: string | null
+          forma: string
+          id: string
+          status: string
+          total: number
+          user_id: string
+        }
+        Insert: {
+          criado_em?: string
+          endereco_texto?: string | null
+          forma: string
+          id?: string
+          status?: string
+          total: number
+          user_id: string
+        }
+        Update: {
+          criado_em?: string
+          endereco_texto?: string | null
+          forma?: string
+          id?: string
+          status?: string
+          total?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "pedidos_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          criado_em: string
+          data_nascimento: string
+          id: string
+          nome: string
+          updated_at: string
+          whatsapp: string
+        }
+        Insert: {
+          criado_em?: string
+          data_nascimento: string
+          id: string
+          nome: string
+          updated_at?: string
+          whatsapp: string
+        }
+        Update: {
+          criado_em?: string
+          data_nascimento?: string
+          id?: string
+          nome?: string
+          updated_at?: string
+          whatsapp?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
