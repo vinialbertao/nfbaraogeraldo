@@ -9,4 +9,4 @@
 - [x] Criar cadastro, login e recuperação de senha
 - [x] Criar Minha conta, favoritos e endereços por CEP
 - [x] Registrar pedidos antes de abrir o WhatsApp
-- [ ] Validar contas de clientes em celular e desktop
+- [x] Validar contas de clientes em celular e desktop

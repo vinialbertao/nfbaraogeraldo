@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/auth")({
-  validateSearch: (search: Record<string, unknown>) => ({ next: typeof search.next === "string" && search.next.startsWith("/") ? search.next : "/conta" }),
+  validateSearch: (search: Record<string, unknown>) => ({ next: typeof search["next"] === "string" && search["next"].startsWith("/") ? search["next"] : "/conta" }),
   head: () => ({ meta: [
     { title: "Entrar ou criar conta | NF Barão" },
     { name: "description", content: "Acesse sua conta NF Barão para salvar favoritos, endereços e acompanhar pedidos." },
@@ -49,7 +49,7 @@ function AuthPage() {
         const { data, error: authError } = await supabase.auth.signInWithPassword({ email: form.email, password: form.senha });
         if (authError) throw authError;
         const metadata = data.user.user_metadata;
-        await supabase.from("profiles").upsert({ id: data.user.id, nome: String(metadata.nome ?? data.user.email?.split("@")[0] ?? "Cliente"), whatsapp: String(metadata.whatsapp ?? "11999999999"), data_nascimento: String(metadata.data_nascimento ?? "2000-01-01") }, { onConflict: "id", ignoreDuplicates: true });
+         await supabase.from("profiles").upsert({ id: data.user.id, nome: String(metadata["nome"] ?? data.user.email?.split("@")[0] ?? "Cliente"), whatsapp: String(metadata["whatsapp"] ?? "11999999999"), data_nascimento: String(metadata["data_nascimento"] ?? "2000-01-01") }, { onConflict: "id", ignoreDuplicates: true });
         await navigate({ to: next });
       }
     } catch (err) { setError(err instanceof Error ? err.message : "Não foi possível continuar."); } finally { setBusy(false); }
