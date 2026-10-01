@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep all catalogue inventory in `src/data/produtos.json` and store information in `src/data/loja.ts` so non-UI updates never require component edits.
+- Keep the catalogue as a single anchor-navigated public route because the requested experience is one continuous mobile-first storefront.
