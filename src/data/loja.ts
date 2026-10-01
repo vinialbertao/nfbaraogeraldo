@@ -1,8 +1,8 @@
 export const loja = {
   nome: "NF Barão",
   nomeCompleto: "Nostro Fumo Barão",
-  whatsapp: "5519997489919",
-  telefoneExibicao: "(19) 99748-9919",
+  whatsapp: "5519996179369",
+  telefoneExibicao: "(19) 99617-9369",
   instagram: "https://instagram.com/nf.barao",
   endereco: "Av. Santa Isabel, 71 – Barão Geraldo, Campinas – SP, 13084-012",
   avaliacao: { nota: 4.9, total: 140 },
