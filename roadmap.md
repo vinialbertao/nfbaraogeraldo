@@ -6,7 +6,7 @@
 - [x] Integrar WhatsApp, mapa e indicador de funcionamento
 - [x] Configurar metadados e validar em celular e desktop
 - [x] Criar estrutura segura de clientes, endereços, favoritos e pedidos
-- [ ] Criar cadastro, login e recuperação de senha
-- [ ] Criar Minha conta, favoritos e endereços por CEP
-- [ ] Registrar pedidos antes de abrir o WhatsApp
+- [x] Criar cadastro, login e recuperação de senha
+- [x] Criar Minha conta, favoritos e endereços por CEP
+- [x] Registrar pedidos antes de abrir o WhatsApp
 - [ ] Validar contas de clientes em celular e desktop

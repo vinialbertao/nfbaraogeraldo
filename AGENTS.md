@@ -11,3 +11,4 @@
 
 - Keep all catalogue inventory in `src/data/produtos.json` and store information in `src/data/loja.ts` so non-UI updates never require component edits.
 - Keep the catalogue as a single anchor-navigated public route because the requested experience is one continuous mobile-first storefront.
+- Keep customer identity and customer-owned records in Lovable Cloud with row-level access; the storefront itself remains publicly usable without authentication.
